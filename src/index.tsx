@@ -1,11 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { initializeApollo } from "services/graphql";
+import { ApolloProvider } from "@apollo/client";
+import { Provider } from "react-redux";
+import store from "redux/store";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
+const apolloClient = initializeApollo();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={apolloClient}>
+      <Provider store={store}>
+        <div className='App'>
+          <App />
+        </div>
+      </Provider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

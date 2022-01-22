@@ -1,20 +1,12 @@
-import React from "react";
-
-import { Header, Main, Cards, Footer } from "components/css";
-
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-      }}
-    >
-      <Header />
-      <Main />
-      <Cards />
-      <Footer />
+      }}>
+      <div>Welcome to superplate</div>
     </div>
   );
 };
